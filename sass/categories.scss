@@ -1,0 +1,20 @@
+.categories {
+  margin-bottom: 40px;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    margin: 0 15px 10px;
+  }
+
+  .link {
+    color: #01142f;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+  }
+}

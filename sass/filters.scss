@@ -1,0 +1,235 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 40px;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
+
+  .container-mob {
+    display: none;
+
+    @media (max-width: 960px) {
+      display: flex;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 10px;
+    }
+  }
+
+  .options {
+    @media (max-width: 960px) {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    &-mob {
+      display: flex;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      line-height: 24px;
+      color: #01142f;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &-icon {
+        width: 11px;
+        margin-right: 10px;
+        margin-top: -1px;
+      }
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.1s ease-in;
+
+    @media (max-width: 960px) {
+      width: 100%;
+      border-bottom: 1px solid rgba(1, 20, 47, 0.3);
+      padding: 10px 0;
+
+      &:first-child {
+        border-top: 1px solid rgba(1, 20, 47, 0.3);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .dropdow-link {
+        opacity: 0.5;
+      }
+    }
+
+    &-link {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 300;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.1s ease-in;
+      color: #01142f;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding-right: 16px;
+      margin-right: 20px;
+
+      @media (max-width: 960px) {
+        display: block;
+        font-size: 12px;
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:after {
+        content: " ";
+        width: 5px;
+        height: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: transparent #000 #000 transparent;
+        position: absolute;
+        transform: rotate(45deg);
+        right: 4px;
+        top: -2px;
+        bottom: 0;
+        margin: auto;
+        pointer-events: none;
+      }
+    }
+
+    &-content {
+      display: none;
+      position: absolute;
+      left: -10px;
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 200px;
+      overflow: auto;
+      padding: 12px 10px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      z-index: 1;
+      overflow-y: auto;
+
+      @media (max-width: 960px) {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        padding: 6px 0 12px;
+      }
+
+      .list {
+        margin: -5px 0;
+        .item {
+          font-size: 14px;
+          line-height: 1.2;
+          font-weight: 200;
+          color: #000;
+          cursor: pointer;
+          padding: 5px 10px;
+          text-align: left;
+          margin: 0 -10px;
+
+          @media (max-width: 960px) {
+            padding: 5px 0;
+            margin: 0;
+          }
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+
+    .checkboxes {
+      display: flex;
+      flex-direction: column;
+      margin-top: 6px;
+    }
+
+    .show {
+      display: block;
+    }
+  }
+
+  .search {
+    position: relative;
+
+    @media (max-width: 960px) {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    &-mob {
+      margin-left: auto;
+      &-icon {
+        width: 16px;
+      }
+    }
+
+    &-control {
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 100;
+      line-height: 1.8;
+      width: 150px;
+      outline: 0;
+      border: 1px #ddd solid;
+      background: #f8f8f8;
+      color: #000;
+      box-sizing: border-box;
+      appearance: none;
+      border-radius: 3px;
+      padding: 0 50px 0 10px;
+
+      @media (max-width: 960px) {
+        width: 100%;
+        font-size: 16px;
+        padding: 2px 72px 2px 10px;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+      width: 13px;
+      height: 100%;
+      padding-left: 7px;
+      padding-right: 8px;
+      border-left: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    &-close-icon {
+      display: inline;
+      position: absolute;
+      top: 0;
+      right: 28px;
+      bottom: 0;
+      opacity: 0.8;
+      cursor: pointer;
+      padding-left: 2px;
+      padding-right: 8px;
+      margin: auto;
+    }
+  }
+}

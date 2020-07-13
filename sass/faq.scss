@@ -1,0 +1,62 @@
+.faq {
+  max-width: 960px;
+  margin: auto;
+  border-bottom: 1px solid #eee;
+
+  .acc-head {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #4a586e;
+    cursor: pointer;
+    padding: 27px 0;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #eee;
+    transition: 0.4s;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 22px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all ease-in-out 0.3s;
+      color: #000;
+    }
+
+    &:hover .icon {
+      background: #6d6b6b;
+      filter: invert(100%);
+    }
+  }
+
+  .active {
+    .icon {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .acc-body {
+    font-size: 18px;
+    line-height: 1.55;
+    display: none;
+    transition: max-height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+
+    .content-block {
+      margin-bottom: 30px;
+    }
+
+    .caption {
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .text {
+      margin-bottom: 27px;
+    }
+  }
+}
