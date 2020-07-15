@@ -55,39 +55,63 @@ $(document).ready(function () {
     var popup_id = $("#" + $(this).attr("rel"));
     $(popup_id).show();
     $(".popup-overlay").show();
-    $('body').css({'overflow' : "hidden"})
+    $("body").css({ overflow: "hidden" });
   });
 
   $(".popup-overlay").click(function () {
     $(".popup-overlay, .popup").hide();
-    $('body').css({'overflow' : "inherit"})
+    $("body").css({ overflow: "inherit" });
   });
 
   $(".popup-close").click(function () {
     $(".popup-overlay, .popup").hide();
-    $('body').css({'overflow' : "inherit"})
+    $("body").css({ overflow: "inherit" });
   });
 });
 
 // dropdown
-$(".dropdown-link").click(function() {
-  $('.dropdown-content').hide();
+$(".dropdown-link").click(function () {
+  $(".dropdown-content").hide();
   $(this).next().toggle();
 });
-$(document).on('click', function(e) {
+$(document).on("click", function (e) {
   if (!$(e.target).closest(".dropdown").length) {
-    $('.dropdown-content').hide();
+    $(".dropdown-content").hide();
   }
   e.stopPropagation();
 });
 
 // dropdown-mobile
-$(".options-mob").click(function() {
+$(".options-mob").click(function () {
   $(".options").toggle();
-  $(".filters").css({"flex-direction" : "column"});
+  $(".filters").css({ "flex-direction": "column" });
 });
 
-$(".search-mob").click(function() {
+$(".search-mob").click(function () {
   $(".search").toggle();
-  $(".filters").css({"flex-direction" : "column"});
+  $(".filters").css({ "flex-direction": "column" });
 });
+
+// mask for input phone
+function phone_mask(){
+	$.mask.definitions['9']='';
+	$.mask.definitions['d']='[0-9]';
+	$(".phone").mask("+7 ddd ddd-dd-dd");
+	$(".phone").intlTelInput({
+		autoHideDialCode:false,
+		autoPlaceholder:"aggressive",
+		placeholderNumberType:"MOBILE",
+		preferredCountries:['ru','th'],
+		utilsScript:"/assets/js/intl-tel-input/js/utils.js",
+		customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){
+			return '+'+selectedCountryData.dialCode+' '+selectedCountryPlaceholder.replace(/[0-9]/g,'_');
+		},
+  });
+  $(".iti").css({"display": "block"});
+	$(".phone").on("close:countrydropdown",function(e,countryData){
+		$(this).val('');
+		$(this).mask($(this).attr('placeholder').replace(/[_]/g,'d'));
+	});
+}
+phone_mask();
+
