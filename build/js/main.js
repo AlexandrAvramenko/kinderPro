@@ -69,6 +69,15 @@ $(document).ready(function () {
   });
 });
 
+// card-product-gallery
+$(document).ready(function () {
+  $(".card-product .popup-gallery .img").click(function () {
+    $(".card-product .popup-gallery .img").removeClass('active');
+    $(this).toggleClass("active");
+    $('.picture .img').attr('src', $(this).data('img'));
+  });
+});
+
 // dropdown
 $(".dropdown-link").click(function () {
   $(".dropdown-content").hide();
@@ -93,52 +102,93 @@ $(".search-mob").click(function () {
 });
 
 // mask for input phone
-function phone_mask(){
-	$.mask.definitions['9']='';
-	$.mask.definitions['d']='[0-9]';
-	$(".phone").mask("+7 ddd ddd-dd-dd");
-	$(".phone").intlTelInput({
-		autoHideDialCode:false,
-		autoPlaceholder:"aggressive",
-		placeholderNumberType:"MOBILE",
-		preferredCountries:['ru','th'],
-		utilsScript:"/assets/js/intl-tel-input/js/utils.js",
-		customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){
-			return '+'+selectedCountryData.dialCode+' '+selectedCountryPlaceholder.replace(/[0-9]/g,'_');
-		},
+function phone_mask() {
+  $.mask.definitions["9"] = "";
+  $.mask.definitions["d"] = "[0-9]";
+  $(".phone").mask("+7 ddd ddd-dd-dd");
+  $(".phone").intlTelInput({
+    autoHideDialCode: false,
+    autoPlaceholder: "aggressive",
+    placeholderNumberType: "MOBILE",
+    preferredCountries: ["ru", "th"],
+    utilsScript: "/assets/js/intl-tel-input/js/utils.js",
+    customPlaceholder: function (
+      selectedCountryPlaceholder,
+      selectedCountryData
+    ) {
+      return (
+        "+" +
+        selectedCountryData.dialCode +
+        " " +
+        selectedCountryPlaceholder.replace(/[0-9]/g, "_")
+      );
+    },
   });
-  $(".iti").css({"display": "block"});
-	$(".phone").on("close:countrydropdown",function(e,countryData){
-		$(this).val('');
-		$(this).mask($(this).attr('placeholder').replace(/[_]/g,'d'));
-	});
+  $(".iti").css({ display: "block" });
+  $(".phone").on("close:countrydropdown", function (e, countryData) {
+    $(this).val("");
+    $(this).mask($(this).attr("placeholder").replace(/[_]/g, "d"));
+  });
 }
 phone_mask();
 
-
 // jQuery UI Datepicker
 /* localization datepicker */
-$.datepicker.regional['ru'] = {
-	closeText: 'Закрыть',
-	prevText: 'Предыдущий',
-	nextText: 'Следующий',
-	currentText: 'Сегодня',
-	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
-	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-	weekHeader: 'Не',
-	dateFormat: 'dd.mm.yy',
-	firstDay: 1,
-	isRTL: false,
-	showMonthAfterYear: false,
-	yearSuffix: ''
+$.datepicker.regional["ru"] = {
+  closeText: "Закрыть",
+  prevText: "Предыдущий",
+  nextText: "Следующий",
+  currentText: "Сегодня",
+  monthNames: [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ],
+  monthNamesShort: [
+    "Янв",
+    "Фев",
+    "Мар",
+    "Апр",
+    "Май",
+    "Июн",
+    "Июл",
+    "Авг",
+    "Сен",
+    "Окт",
+    "Ноя",
+    "Дек",
+  ],
+  dayNames: [
+    "воскресенье",
+    "понедельник",
+    "вторник",
+    "среда",
+    "четверг",
+    "пятница",
+    "суббота",
+  ],
+  dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+  dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  weekHeader: "Не",
+  dateFormat: "dd.mm.yy",
+  firstDay: 1,
+  isRTL: false,
+  showMonthAfterYear: false,
+  yearSuffix: "",
 };
-$.datepicker.setDefaults($.datepicker.regional['ru']);
+$.datepicker.setDefaults($.datepicker.regional["ru"]);
 
-$(function(){
-	$("#datepicker").datepicker({
-    dateFormat: "dd-mm-yy"
+$(function () {
+  $("#datepicker").datepicker({
+    dateFormat: "dd-mm-yy",
   });
 });
