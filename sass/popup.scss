@@ -139,6 +139,8 @@
 
 // cartwin
 .cartwin {
+  z-index: 1001;
+
   &-container {
     @media (max-width: 640px) {
       top: -65px;
@@ -186,10 +188,12 @@
     display: flex;
     align-items: center;
     padding: 15px 0;
+    position: relative;
 
     @media (max-width: 640px) {
       flex-wrap: wrap;
       align-items: flex-start;
+      padding: 35px 0;
     }
 
     &:hover {
@@ -201,7 +205,6 @@
     }
 
     &-thumb {
-      order: 1;
       width: 70px;
       height: 100px;
       background-size: cover;
@@ -210,21 +213,33 @@
       background-position: center;
       background-image: url(../img/cartwin.jpg);
       margin-right: 20px;
+      margin-bottom: auto;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 640px) {
+        flex-wrap: wrap;
+        max-width: calc(100% - 120px);
+      }
     }
 
     &-desc {
-      order: 2;
       text-align: left;
 
       @media (max-width: 640px) {
-        order: 3;
+        width: 100%;
+        padding-bottom: 10px;
       }
 
       .title {
+        font-size: 16px;
+        line-height: 1.55;
+        font-weight: 500;
+
         .link {
-          font-size: 16px;
-          line-height: 1.55;
-          font-weight: 500;
           color: #000;
           text-decoration: none;
         }
@@ -239,12 +254,11 @@
       }
     }
     &-plusminus {
-      order: 3;
       display: flex;
       padding: 0 10px;
 
       @media (max-width: 640px) {
-        order: 4;
+        margin-left: -15px;
       }
 
       .quantity {
@@ -258,29 +272,23 @@
       }
     }
     &-amount {
-      order: 4;
       width: 80px;
       font-size: 16px;
-      padding: 15px 0;
+      padding: 12px 0 15px;
       vertical-align: middle;
       color: #000;
       white-space: nowrap;
-
-      @media (max-width: 640px) {
-        order: 5;
-      }
     }
 
     &-del {
-      order: 5;
       width: 20px;
       opacity: 0.4;
       padding: 15px 0 15px 15px;
 
       @media (max-width: 640px) {
-        order: 2;
-        padding: 0;
-        margin-left: auto;
+        position: absolute;
+        top: 20px;
+        right: 0;
       }
     }
   }
