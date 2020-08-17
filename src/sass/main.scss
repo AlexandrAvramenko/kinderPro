@@ -4,12 +4,12 @@
 // block1
 .block1 {
   height: calc(100vh - 200px);
-  background: url(/img/block1.webp) no-repeat right top;
+  background: url(../img/block1.webp) no-repeat right top;
   padding-top: 60px;
   padding-bottom: 60px;
 
   @media (max-width: 960px) {
-    background: url(/img/block2.webp) no-repeat center;
+    background: url(../img/block2.webp) no-repeat center;
     background-size: cover;
     width: 100%;
   }
@@ -160,7 +160,7 @@
       }
 
       .image {
-        background: url(/img/block2.webp) no-repeat center;
+        background: url(../img/block2.webp) no-repeat center;
         background-size: cover;
         width: 100%;
       }
@@ -175,7 +175,7 @@
 
   .collection {
     height: 400px;
-    background: url(/img/block3.webp) no-repeat 50% 50%;
+    background: url(../img/block3.webp) no-repeat 50% 50%;
     background-size: cover;
 
     @media (max-width: 960px) {
@@ -233,7 +233,7 @@
       .img {
         flex: 1;
         height: 100%;
-        background: url(/img/block8.webp) no-repeat 50% 50%;
+        background: url(../img/block8.webp) no-repeat 50% 50%;
         background-size: cover;
 
         @media (max-width: 960px) {
@@ -252,7 +252,7 @@
           width: 47%;
           margin: 10px;
           padding-top: 50%;
-          background: url(/img/block8.webp) no-repeat 50% 50%;
+          background: url(../img/block8.webp) no-repeat 50% 50%;
           background-size: cover;
         }
       }
@@ -262,7 +262,7 @@
           width: 100%;
           margin-top: 20px;
           padding-top: 65%;
-          background: url(/img/block8.webp) no-repeat 50% 50%;
+          background: url(../img/block8.webp) no-repeat 50% 50%;
           background-size: cover;
         }
       }
@@ -572,14 +572,14 @@
 
 // block7
 .block7 {
-  background: url(/img/block7.webp) no-repeat center;
+  background: url(../img/block7.webp) no-repeat center;
   background-size: cover;
 
   @media (max-width: 960px) {
     display: flex;
     align-items: center;
     height: 498px;
-    background: url(/img/block7sm.jpg) no-repeat center;
+    background: url(../img/block7sm.jpg) no-repeat center;
   }
 
   .content {
@@ -655,7 +655,7 @@
       }
 
       .image {
-        background: url(/img/block8.webp) no-repeat center;
+        background: url(../img/block8.webp) no-repeat center;
         background-size: cover;
         width: 100%;
       }
