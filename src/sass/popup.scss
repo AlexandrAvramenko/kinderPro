@@ -1,0 +1,344 @@
+// popup
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-sizing: border-box;
+  transition: opacity ease-in-out 0.3s;
+  overflow-y: auto;
+
+  @media (max-width: 640px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0%, 0%);
+    margin-top: 65px;
+  }
+
+  &-wrap {
+    position: relative;
+  }
+
+  &-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    opacity: 0.8;
+    z-index: 998;
+
+    @media (max-width: 640px) {
+      opacity: 1;
+      height: 100%;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: -4px;
+      width: 31px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: -4px;
+      width: 31px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+  }
+
+  &-container {
+    position: relative;
+    top: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 560px;
+    background-color: #fff;
+
+    @media (max-width: 640px) {
+      max-width: 100%;
+    }
+
+    .img {
+      display: block;
+      width: 100%;
+    }
+
+    .bottom {
+      text-align: center;
+      padding: 40px 45px;
+
+      @media (max-width: 640px) {
+        padding: 20px;
+      }
+    }
+
+    .title {
+      font-size: 32px;
+      line-height: 1.17;
+      font-weight: 600;
+      color: #4a586e;
+      padding: 0;
+    }
+
+    .desc {
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 200;
+      color: #000;
+      margin-top: 17px;
+    }
+
+    .btn-wrap {
+      margin-top: 30px;
+    }
+
+    .btn-pop {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      height: 46px;
+      color: #222;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 3px solid #969696;
+      background-color: #dae4e5;
+      padding: 0 25px;
+    }
+  }
+}
+
+// cartwin
+.cartwin {
+  z-index: 1001;
+
+  &-container {
+    @media (max-width: 640px) {
+      top: -65px;
+    }
+  }
+
+  &-content {
+    margin: 65px auto;
+    width: 100%;
+    max-width: 560px;
+    min-height: 300px;
+    max-height: 80vh;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    @media (max-width: 640px) {
+      top: -50px;
+      max-height: calc(100vh - 50px);
+      max-width: 100%;
+      margin-bottom: auto;
+      padding: 20px;
+    }
+  }
+
+  &-top {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 30px;
+  }
+
+  &-title {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: #4a586e;
+    text-align: left;
+  }
+
+  &-products {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+
+    @media (max-width: 640px) {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 35px 0;
+    }
+
+    &:hover {
+      .product-plusminus .minus,
+      .product-plusminus .plus,
+      .product-del {
+        opacity: 1;
+      }
+    }
+
+    &-thumb {
+      width: 70px;
+      height: 100px;
+      background-size: cover;
+      border-radius: 7px;
+      background-color: #eee;
+      background-position: center;
+      background-image: url(/img/cartwin.jpg);
+      margin-right: 20px;
+      margin-bottom: auto;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 640px) {
+        flex-wrap: wrap;
+        max-width: calc(100% - 120px);
+      }
+    }
+
+    &-desc {
+      text-align: left;
+
+      @media (max-width: 640px) {
+        width: 100%;
+        padding-bottom: 5px;
+      }
+
+      .title {
+        font-size: 16px;
+        line-height: 1.55;
+        font-weight: 500;
+
+        .link {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+
+      .size,
+      .code {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.55;
+        opacity: 0.7;
+      }
+    }
+    &-plusminus {
+      display: flex;
+      padding: 0 10px;
+
+      @media (max-width: 640px) {
+        margin-left: -15px;
+      }
+
+      .quantity {
+        padding: 0 5px 3px 5px;
+      }
+
+      .minus,
+      .plus {
+        opacity: 0.4;
+        padding: 0 5px;
+      }
+    }
+    &-amount {
+      width: 80px;
+      font-size: 16px;
+      padding: 12px 0 15px;
+      vertical-align: middle;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    &-del {
+      width: 20px;
+      opacity: 0.4;
+      padding: 15px 0 15px 15px;
+
+      @media (max-width: 640px) {
+        position: absolute;
+        top: 20px;
+        right: 0;
+      }
+    }
+  }
+
+  &-bottom {
+    font-size: 16px;
+    text-align: right;
+    font-weight: 500;
+    color: #000;
+    text-align: right;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .orderform {
+    .form {
+      &-label {
+        font-size: 16px;
+        font-weight: 200;
+      }
+
+      &-control {
+        height: 56px;
+        border: 1px solid #000;
+      }
+    }
+  }
+
+  .btn {
+    &-wrap {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    &-form-sub {
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      font-size: 16px;
+      padding-left: 60px;
+      padding-right: 60px;
+      appearance: none;
+      font-weight: 600;
+      border-radius: 6px;
+      white-space: nowrap;
+      cursor: pointer;
+      color: #000000;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

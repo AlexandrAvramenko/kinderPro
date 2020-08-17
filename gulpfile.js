@@ -26,25 +26,26 @@ var path = {
         html: "build/",
         js: "build/js/",
         css: "build/css/",
-        img: "build//img/",
+        img: "build/img/",
         fonts: "build/fonts/"
     },
     src: {
-        html: "*.{htm,html}",
-        js: "js/**/*.js",
-        css: "sass/style.scss",
-        img: "img/**/*.*",
-        fonts: "fonts/**/*.*"
+        html: "src/*.{htm,html}",
+        js: "src/js/*.js",
+        css: "src/sass/style.scss",
+        img: "src/img/**/*.*",
+        fonts: "src/fonts/**/*.*"
     },
     watch: {
-        html: "*.{htm,html}",
-        js: "js/**/*.js",
-        css: "sass/**/*.scss",
-        img: "img/**/*.*",
-        fonts: "fonts/**/*.*"
+        html: "src/**/*.{htm,html}",
+        js: "src/js/**/*.js",
+        css: "src/sass/**/*.scss",
+        img: "src/img/**/*.*",
+        fonts: "src/fonts/**/*.*"
     },
     clean: "./build"
 };
+
 
 
 /* Webserver config
