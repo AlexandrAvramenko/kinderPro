@@ -192,3 +192,7 @@ $(function () {
     dateFormat: "dd-mm-yy",
   });
 });
+
+$(document).ready(function(){
+  $('.slick').slick();
+});
