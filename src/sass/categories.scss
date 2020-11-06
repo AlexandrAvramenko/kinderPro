@@ -1,20 +1,31 @@
 .categories {
-  margin-bottom: 40px;
+  background-color: rgba(218,228,229,1);
+  margin: 45px -20px 60px;
 
   .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media (max-width: 960px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
   }
 
   .item {
-    margin: 0 15px 10px;
+    padding: 16px 12px;
+    @media (max-width: 960px) {
+      padding: 12px 10px;
+    }
   }
 
   .link {
-    color: #01142f;
-    font-size: 22px;
-    letter-spacing: 1.5px;
+    color: #4a586e;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
     text-decoration: none;
   }
 }

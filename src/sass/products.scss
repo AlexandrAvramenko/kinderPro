@@ -1,125 +1,145 @@
-.products {
+.card {
+  width: 33.333%;
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5px 40px;
+  box-sizing: border-box;
 
   @media (max-width: 960px) {
-    justify-content: center;
+    width: 50%;
   }
 
-  .card {
-    width: 33.333%;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 5px 40px;
-    box-sizing: border-box;
-
-    &:hover {
-      .front {
-        display: none;
-      }
-
-      .back {
-        display: block;
-      }
-    }
-
-    &-head {
-      height: 418px;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    &-mark {
-      position: absolute;
-      right: -25px;
-      top: 10px;
-      z-index: 5;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: uppercase;
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      background: #ffcb8b;
-      color: #fff;
-      box-sizing: border-box;
-      padding: 0 10px;
-    }
-
-    &-img {
-      height: 100%;
-    }
-
-    .back {
+  &:hover {
+    .front {
       display: none;
     }
 
-    &-body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &-title,
-    &-price {
-      color: #4a586e;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 25px;
+    .back {
+      display: block;
     }
   }
 
-  &.relevant {
-    display: flex;
-
-    @media (max-width: 960px) {
-      flex-wrap: wrap;
-    }
-
-    .card {
-      width: 25%;
-      min-width: 280px;
-
-      @media (max-width: 640px) {
-        width: 100%;
-      }
-
-
-      &-head {
-        height: 286px;
-      }
-    }
+  &-head {
+    height: 100%;
+    margin-bottom: 20px;
+    position: relative;
   }
 
-  .btn-card {
+  &-mark {
+    position: absolute;
+    right: -25px;
+    top: 10px;
+    z-index: 5;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: 45px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: #ffcb8b;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  &-img {
+    width: 100%;
+  }
+
+  .back {
+    display: none;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-title {
+    color: #4a586e;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 25px;
+
+    @media (max-width: 960px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &-price {
+    color: #4a586e;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  &-desc {
     font-size: 14px;
-    color: #000000;
-    border: 0 none;
-    border-radius: 6px;
-    font-weight: 700;
-    padding: 0 30px;
-    margin: 15px;
-    background: transparent;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
-      border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    line-height: 1.55;
+    color: #4a586e;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+    @media (max-width: 960px) {
+      font-size: 12px;
+    }
+  }
+
+  &-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: -5px;
 
     @media (max-width: 640px) {
-      width: 100%;
+      flex-wrap: wrap;
     }
+  }
+}
+
+.btn-card {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  font-size: 14px;
+  border: 0 none;
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 0 30px;
+  margin: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
+  &-gray {
+    color: #fff;
+    background: #4a586e;
+  }
+
+  &-white {
+    color: #000;
 
     &:hover {
-      background: #dae4e5;
+      color: #fff;
+      background: #4a586e;
     }
   }
 }

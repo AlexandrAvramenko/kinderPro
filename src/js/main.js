@@ -56,6 +56,8 @@ $(document).ready(function () {
     $(popup_id).show();
     $(".popup-overlay").show();
     $("body").css({ overflow: "hidden" });
+    $('#card-images').slick('refresh')
+    $('#card-images-dotted').slick('refresh')
   });
 
   $(".popup-overlay").click(function () {
@@ -72,33 +74,10 @@ $(document).ready(function () {
 // card-product-gallery
 $(document).ready(function () {
   $(".card-product .popup-gallery .img").click(function () {
-    $(".card-product .popup-gallery .img").removeClass('active');
+    $(".card-product .popup-gallery .img").removeClass("active");
     $(this).toggleClass("active");
-    $('.picture .img').attr('src', $(this).data('img'));
+    $(".picture .img").attr("src", $(this).data("img"));
   });
-});
-
-// dropdown
-$(".dropdown-link").click(function () {
-  $(".dropdown-content").hide();
-  $(this).next().toggle();
-});
-$(document).on("click", function (e) {
-  if (!$(e.target).closest(".dropdown").length) {
-    $(".dropdown-content").hide();
-  }
-  e.stopPropagation();
-});
-
-// dropdown-mobile
-$(".options-mob").click(function () {
-  $(".options").toggle();
-  $(".filters").css({ "flex-direction": "column" });
-});
-
-$(".search-mob").click(function () {
-  $(".search").toggle();
-  $(".filters").css({ "flex-direction": "column" });
 });
 
 // mask for input phone
@@ -193,6 +172,54 @@ $(function () {
   });
 });
 
+//slider for main page
+$(".slick").slick({
+  dots: true,
+  arrow: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: "linear",
+  prevArrow: "#left-arrow",
+  nextArrow: "#right-arrow",
+});
+
+// btn-up
+$(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() != 0) {
+      $("#toTop").fadeIn();
+    } else {
+      $("#toTop").fadeOut();
+    }
+  });
+
+  $("#toTop").click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 800);
+  });
+});
+
+// Slider for card in modal
+$('#card-images').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  asNavFor: '#card-images-dotted',
+  prevArrow: "#left-arrow",
+  nextArrow: "#right-arrow",
+});
+
+$('#card-images-dotted').slick({
+  slidesToShow: 3,
+  asNavFor: '#card-images',
+  focusOnSelect: true,
+  arrows: false,
+});
+
+// venobox for cadr images
 $(document).ready(function(){
-  $('.slick').slick();
+  $('.venobox').venobox({
+    overlayColor: '#ffffff',
+    overlayClose: true
+  });
 });

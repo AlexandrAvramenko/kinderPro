@@ -1,0 +1,38 @@
+.see-also {
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+    min-width: 240px;
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 70px 20px 40px;
+    color: #4a586e;
+    letter-spacing: inherit;
+    padding-bottom: 15px;
+
+    @media (max-width: 960px) {
+      margin: 0 0 40px;
+    }
+  }
+
+  &-cards {
+    display: flex;
+
+    @media (max-width: 960px) {
+      flex-wrap: wrap;
+      min-width: 240px;
+    }
+
+    .card {
+      @media (max-width: 640px) {
+        width: 100%;
+      }
+    }
+  }
+}

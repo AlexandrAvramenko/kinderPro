@@ -8,12 +8,29 @@
     <div class="container">
       <div class="popup-content">
         <div class="popup-gallery">
-          <div class="thumb">
-            <img src="../img/04-front.webp" data-img="../img/04-front.webp" class="img active" alt="img" />
-            <img src="../img/04-back.webp" data-img="../img/04-back.webp" class="img" alt="img" />
-          </div>
-          <div class="picture">
-            <img src="../img/04-front.webp" class="img" alt="img" />
+          <div class="gallery">
+            <div id="card-images">
+              <div><a class="venobox" href="../img/06-front.webp" data-gall="myGallery"><img src="../img/06-front.webp" class="img-slide" alt=""></a></div>
+              <div><a class="venobox" href="../img/06-back.webp" data-gall="myGallery"><img src="../img/06-front.webp" class="img-slide" alt=""></a></div>
+              <div><a class="venobox" href="../img/06-front.webp" data-gall="myGallery"><img src="../img/06-front.webp" class="img-slide" alt=""></a></div>
+              <div><a class="venobox" href="../img/06-back.webp" data-gall="myGallery"><img src="../img/06-front.webp" class="img-slide" alt=""></a></div>
+            </div>
+            <div id="card-images-dotted" style="transform: none !important;">
+              <img class="img-dot active" src="../img/06-front.webp">
+              <img class="img-dot" src="../img/06-back.webp">
+              <img class="img-dot" src="../img/06-front.webp">
+              <img class="img-dot" src="../img/06-back.webp">
+            </div>
+            <div class="wrapper-right-arrow">
+              <div id="right-arrow">
+                <svg style="display: block" viewBox="0 0 11.9 19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <desc>Right</desc> <polyline fill="none" stroke="#000000" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="3" points="1.5,1.5 9.5,9.5 1.5,17.5"></polyline> </svg>
+              </div>
+            </div>
+            <div class="wrapper-left-arrow">
+              <div id="left-arrow">
+                <svg style="display: block" viewBox="0 0 11.9 19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <desc>Left</desc> <polyline fill="none" stroke="#000000" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="3" points="1.5,1.5 9.5,9.5 1.5,17.5"></polyline> </svg>
+              </div>
+            </div>
           </div>
         </div>
         <div class="popup-info">
@@ -53,7 +70,7 @@
             </div>
           </div>
           <div class="btn-wrap">
-            <button class="btn-card">В корзину</button>
+            <button class="btn-card btn-card-gray">В корзину</button>
           </div>
           <div class="desc-wrap">
             <div class="caption">Состав и уход:</div>
@@ -75,8 +92,7 @@
           </div>
         </div>
       </div>
-      <div class="product-relevant-title">Смотрите также</div>
-      //= products-relevant.html
+      //= see-also.html
     </div>
   </div>
 </div>

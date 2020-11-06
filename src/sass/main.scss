@@ -117,7 +117,7 @@
         margin-bottom: 24px;
 
         @media (max-width: 960px) {
-          text-align: center;
+          display: none;
         }
 
         @media (max-width: 640px) {
@@ -186,6 +186,8 @@
     height: 400px;
     background: url(../img/block3.webp) no-repeat 50% 50%;
     background-size: cover;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
     @media (max-width: 960px) {
       display: none;
@@ -207,73 +209,41 @@
       letter-spacing: 1px;
       background-color: #fff;
       padding: 15px 16px 14px;
+      margin-left: 20px;
     }
   }
 
   .gallery {
-    padding: 35px 40px;
-    box-sizing: border-box;
+    display: flex;
+    height: 553px;
 
-    @media (max-width: 960px) {
-      padding-left: 20px;
-      padding-right: 20px;
+    @media (max-width: 1200px) {
+      display: none;
     }
-
-    .wrap {
-      display: flex;
-      margin: -10px;
-
-      @media (max-width: 960px) {
-        flex-wrap: wrap;
-      }
-    }
-
-    .left,
-    .right {
-      width: 50%;
-      margin: 10px;
-
-      @media (max-width: 960px) {
-        width: 100%;
-      }
-    }
-
-    .left {
-      .img {
-        flex: 1;
-        height: 100%;
-        background: url(../img/block8.webp) no-repeat 50% 50%;
+    &-item {
+      margin: 15px;
+      &:first-child {
+        width: 25%;
+        background: url(../img/block3-1.webp) 50% 50% no-repeat;
         background-size: cover;
-
-        @media (max-width: 960px) {
-          height: auto;
-          padding-top: 65%;
-        }
+      }
+      &:nth-child(2) {
+        width: 50%;
+        background: url(../img/block3-2.webp) 50% 50% no-repeat;
+        background-size: cover;
+      }
+      &:last-child {
+        width: 25%;
+        background: url(../img/block3-3.webp) 50% 50% no-repeat;
+        background-size: cover;
       }
     }
+    &-img {
+      width: 100%;
+      object-fit: cover;
+      &:first-child,
+      &:last-child {
 
-    .right {
-      .top {
-        display: flex;
-        margin: -10px;
-
-        .img {
-          width: 47%;
-          margin: 10px;
-          padding-top: 50%;
-          background: url(../img/block8.webp) no-repeat 50% 50%;
-          background-size: cover;
-        }
-      }
-
-      .bottom {
-        .img {
-          width: 100%;
-          margin-top: 20px;
-          padding-top: 65%;
-          background: url(../img/block8.webp) no-repeat 50% 50%;
-          background-size: cover;
-        }
       }
     }
   }
