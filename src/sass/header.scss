@@ -11,18 +11,22 @@
     position: fixed;
     overflow: hidden;
     z-index: 990;
+    padding-top: 20px;
 
     @media (max-width: 1200px) {
       height: 60px;
+      padding-top: 0;
     }
 
     &-logo {
       .logo {
-        max-width: 220px;
-        width: 220px;
+        max-width: 280px;
+        width: 280px;
+        margin-left: 40px;
 
         @media (max-width: 1200px) {
           display: none;
+          margin-left: 0;
         }
       }
     }
@@ -30,9 +34,11 @@
     &-menu {
       display: flex;
       width: calc(100% - 220px);
+      padding-top: 10px;
 
       @media (max-width: 1200px) {
         display: none;
+        padding-top: 0;
       }
     }
 
