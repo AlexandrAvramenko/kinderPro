@@ -3384,10 +3384,6 @@ ul {
     font-weight: 200;
 }
 
-.vbox-overlay .vbox-content .vbox-figlio {
-    height: calc(100vh - 100px);
-}
-
 .vbox-overlay .vbox-close {
     top: 11px;
     right: 9px;
