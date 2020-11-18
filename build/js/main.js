@@ -220,6 +220,17 @@ $('#card-images-dotted').slick({
 $(document).ready(function(){
   $('.venobox').venobox({
     overlayColor: '#ffffff',
-    overlayClose: true
+    overlayClose: true,
+    cb_post_open  : function(){
+      $('.vbox-zoom').click(function () {
+        $(this).toggleClass("active");
+        $('.vbox-figlio').toggleClass("increase");
+      });
+
+      $('.vbox-content').click(function () {
+        $('.vbox-figlio').removeClass("increase");
+        $('.vbox-zoom').removeClass("active");
+      });
+  },
   });
 });

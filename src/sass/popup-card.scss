@@ -157,6 +157,7 @@
           height: 60px;
           object-fit: cover;
           margin: 4px 2px;
+          cursor: pointer
         }
       }
     }
@@ -276,14 +277,5 @@
         }
       }
     }
-  }
-}
-
-.vbox-overlay {
-  .vbox-close {
-    top: 11px;
-    right: 9px;
-    font-size: 72px;
-    line-height: 0.4;
   }
 }
