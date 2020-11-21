@@ -3253,8 +3253,9 @@ ul {
 .card-product .popup-gallery #card-images-dotted .img-dot {
     width: 60px;
     height: 60px;
-    -o-object-fit: cover;
-    object-fit: cover;
+    -o-object-fit: contain;
+    object-fit: contain;
+    background-color: #f0f0f0;
     margin: 4px 2px;
     cursor: pointer;
 }
