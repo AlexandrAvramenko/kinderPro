@@ -278,5 +278,11 @@
         }
       }
     }
+
+    &-additional-content {
+      @media (max-width: 960px) {
+        margin: 0 20px;
+      }
+    }
   }
 }

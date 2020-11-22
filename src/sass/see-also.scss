@@ -31,7 +31,21 @@
 
     .card {
       @media (max-width: 640px) {
-        width: 100%;
+        width: 100%!important;
+      }
+
+      &-body,
+      &-btn-wrap {
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+      }
+
+      &-btn-wrap {
+        flex-direction: column;
+        @media (max-width: 640px) {
+          flex-direction: row;
+        }
       }
     }
   }
